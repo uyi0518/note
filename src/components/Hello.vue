@@ -2,12 +2,14 @@
   <div>
     <Tool></Tool>
     <List></List>
+    <Edit></Edit>
   </div>
 </template>
 
 <script>
-import Tool from './Tool'
+import Tool from './Tool'    //使用组件的name引入
 import List from './List'
+import Edit from './Edit'
 export default {
   name: 'hello',
   data () {
@@ -17,7 +19,8 @@ export default {
   },
   components:{
     Tool,
-    List
+    List,
+    Edit
   }
 }
 </script>

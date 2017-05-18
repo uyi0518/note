@@ -2,16 +2,17 @@
   <div>
     <span @click="addnote">+++</span>
     <span>love</span>
-    <span>xxx</span> 
+    <span @click="removenote">xxx</span> 
   </div>
 </template>
 <script>
 import { mapActions } from 'vuex'
 export default {
-    name:"Tool",
+    name:"Tool",  //作为import
     methods:{
         ...mapActions({
-            addnote:'ADD'      //映射 this.addnote() 为 this.$store.dispatch('ADD')
+            addnote:'ADD',      //映射 this.addnote() 为 this.$store.dispatch('ADD')
+            removenote:'REMOVE'
         })
     }
   
