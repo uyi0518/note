@@ -18,6 +18,6 @@ export default {
 }
 </script>
 <style scoped>
-div {width: 200px;height: 800px;float: left;}
+div {width: 100px;height: 800px;float: left;border:1px solid black;}
 span{display: block;margin: 20px auto;}
 </style>

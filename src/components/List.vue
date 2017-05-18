@@ -21,7 +21,9 @@ export default {
 }
 </script>
 <style scoped>
-div {width: 400px;height: 800px;}
+* {margin: 0;padding: 0;}
+div {width: 200px;height: 800px;float: left;border: 1px solid black;}
 button {width: 100px;height: 50px;margin:20px auto; }
+li {list-style: none;}
 </style>
 
