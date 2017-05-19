@@ -35,6 +35,17 @@ export default {
         allnote () {
             this.all=true
         }
+    },
+    mounted:function () {
+        alert("aaa")
+       var  old=localStorage.getItem("old")
+        alert(old)
+       this.notelist=JSON.parse(old)
+    },
+    beforeDestroy:function () {
+        alter("aaa")
+        var NOTE=JSON.stringify(this.notelist)
+        localStorage.setItem("old",NOTE)
     }
   
 }
