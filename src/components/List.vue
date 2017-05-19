@@ -1,9 +1,9 @@
 <template>
   <div>
-    <button>好心情</button>
-    <button>坏心情</button>
+    <button>ALL</button>
+    <button @click="love">LOVE</button>
     <ul>
-        <li v-for="item in notelist" :class="{active:item==activeNote}" @click="choosenote(item)">{{item.txt}}</li>
+        <li v-for="item in notelist" :class="{active:item==activeNote}" @click="choosenote(item)" v-if="all ||item.favorite " >{{item.txt}}</li>
     </ul>
   </div>
 </template>
@@ -12,6 +12,11 @@ import { mapState } from 'vuex'
 import { mapActions } from 'vuex'
 export default {
     name:"List",
+    data(){
+        return {
+            all:true
+        }
+    },
     computed:{
         ...mapState({
             notelist:'note',      // 传字符串参数 'note' 等同于 `state => state.count` 
@@ -23,7 +28,10 @@ export default {
     methods:{
         ...mapActions({
             choosenote:'CHOOSE'
-        })
+        }),
+        love () {
+            this.all=false
+        }
     }
   
 }
