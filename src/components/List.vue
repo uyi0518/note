@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>ALL</button>
+    <button @click="allnote">ALL</button>
     <button @click="love">LOVE</button>
     <ul>
         <li v-for="item in notelist" :class="{active:item==activeNote}" @click="choosenote(item)" v-if="all ||item.favorite " >{{item.txt}}</li>
@@ -31,6 +31,9 @@ export default {
         }),
         love () {
             this.all=false
+        },
+        allnote () {
+            this.all=true
         }
     }
   
