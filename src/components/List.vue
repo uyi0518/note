@@ -14,7 +14,7 @@ export default {
     name:"List",
     data(){
         return {
-            all:true
+            all:"1111"
         }
     },
     computed:{
@@ -40,12 +40,12 @@ export default {
         alert("aaa")
        var  old=localStorage.getItem("old")
         alert(old)
-       this.notelist=JSON.parse(old)
+    
     },
     beforeDestroy:function () {
         alter("aaa")
         var NOTE=JSON.stringify(this.notelist)
-        localStorage.setItem("old",NOTE)
+        localStorage.setItem("old","aaaa")
     }
   
 }
