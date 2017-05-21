@@ -22,30 +22,33 @@ export default {
             notelist:'note',      // 传字符串参数 'note' 等同于 `state => state.count` 
             activeNote:'activenote'
         })
+       
 
 
     },
     methods:{
         ...mapActions({
             choosenote:'CHOOSE'
+            
         }),
         love () {
-            this.all=false
+            this.all=false;
+            alert(this.notelist)
         },
         allnote () {
             this.all=true
         }
-    },
-    mounted:function () {
-        alert("aaa")
-       var  old=localStorage.getItem("old")
-        alert(old)
+       },
+created:function () {
+   var  oldnote=localStorage.getItem("old") ;
+    var oldold=eval("(" + oldnote + ")");
+    this.$store.commit({type:'init',data:oldold})
+  
     
-    },
-    beforeDestroy:function () {
-        alter("aaa")
-        var NOTE=JSON.stringify(this.notelist)
-        localStorage.setItem("old","aaaa")
+    window.onbeforeunload = () => {              //绑定一个全局方法，在页面刷新或者离开时存储
+    var NOTE=JSON.stringify(this.notelist)
+        localStorage.setItem("old",NOTE) 
+    }
     }
   
 }

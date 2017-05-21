@@ -30,6 +30,9 @@ export default new Vuex.Store({
         },
         edit (state,e){
             state.activenote.txt=e.target.value
+        },
+        init (state,txt) {
+            state.note=txt.data
         }
     },
     actions:{
