@@ -33,7 +33,7 @@ export default {
         }),
         love () {
             this.all=false;
-            alert(this.notelist)
+          this.getData();               //外部方法调用方式
         },
         allnote () {
             this.all=true
