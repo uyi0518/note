@@ -25,6 +25,6 @@ export default {
 }
 </script>
 <style scoped>
-div {margin-left:312px;border:1px solid black;height: 947px;width: 1608px;}
-textarea {height: 930px;width: 1600px;resize:none;}
+div {float: left;border:1px solid black;height: 948px;width: 1500px;}
+textarea {height: 948px;width: 1500px;resize:none;}
 </style>

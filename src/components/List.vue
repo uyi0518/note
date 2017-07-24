@@ -3,7 +3,7 @@
     <button @click="allnote">ALL</button>
     <button @click="love">LOVE</button>
     <ul>
-        <li v-for="item in notelist" :class="{active:item==activeNote}" @click="choosenote(item)" v-if="all ||item.favorite " >{{item.txt}}</li>
+        <li v-for="item in notelist" :class="{active:item==activeNote}" @click="choosenote(item)" v-show="all ||item.favorite " >{{item.txt}}</li>
     </ul>
   </div>
 </template>
@@ -34,6 +34,7 @@ export default {
         love () {
             this.all=false;
           this.getData();               //外部方法调用方式
+         
         },
         allnote () {
             this.all=true
@@ -55,7 +56,7 @@ created:function () {
 </script>
 <style scoped>
 * {margin: 0;padding: 0;}
-div {width: 210px;height: 947px;float: left;border: 1px solid black;}
+div {width: 210px;height: 950px;float: left;}
 button {width: 80px;height: 30px;margin:20px 10px; }
 li {list-style: none;}
 li.active {background: blue;}
